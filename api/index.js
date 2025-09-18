@@ -28,7 +28,7 @@ export default async function handler(req, res) {
       to: 'info@imelec.es',
       subject: 'Nuevo contacto desde el formulario',
       html: `
-        <h2>Detalles del contacto JMF Ortiz</h2>
+        <h2>Detalles del contacto Imelec</h2>
         <p><strong>Nombre:</strong> ${nombre || 'No especificado'}</p>
         <p><strong>Email:</strong> ${email || 'No especificado'}</p>
         <p><strong>Teléfono:</strong> ${telefono || 'No especificado'}</p>
@@ -38,7 +38,7 @@ export default async function handler(req, res) {
     });
 
     if (error) {
-      return res.status(500).json({ error: error.message || 'Error enviando email' });
+      return res.status(500).json({ error: error || 'Error enviando email' });
     }
 
     return res.status(200).json({ success: true, data });
