@@ -38,7 +38,7 @@ export default async function handler(req, res) {
     });
 
     if (error) {
-      return res.status(500).json({ error: error || 'Error enviando email' });
+      return res.status(500).json({ error: 'error enviando' || 'Error enviando email' });
     }
 
     return res.status(200).json({ success: true, data });
